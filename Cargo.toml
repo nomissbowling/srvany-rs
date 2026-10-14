@@ -1,0 +1,41 @@
+[package]
+name = "srvany"
+version = "0.0.1" # change with html_root_url in lib.rs
+edition = "2024"
+authors = ["nomissbowling <nomissbowling@yahoo.co.jp>"]
+
+description = "srvany for Rust"
+keywords = ["directx", "opengl", "windows", "graphics", "3D"]
+categories = ["simulation", "rendering", "science", "external-ffi-bindings"]
+license = "MIT"
+
+documentation = "https://docs.rs/srvany/"
+homepage = "https://crates.io/crates/srvany"
+repository = "https://github.com/nomissbowling/srvany-rs"
+
+readme = "README.md"
+
+#build = "build.rs"
+
+[lib]
+name = "srvany"
+
+[dependencies]
+asciiz = {version="0.1"}
+# anyslot = {version="0.1"}
+
+#home = {version="=0.5.12"} # cc(1.2.53)/bindgen(0.72.1) requires home(0.5.12)
+
+bpaf = {version="=0.9.28", features=["derive"]}
+
+windows = {version="=0.62.2", features = [
+  "Win32_Security",
+  "Win32_System_Services",
+  "Win32_Foundation"]} # version="0.58"
+
+[build-dependencies]
+#cc = "=1.2.53"
+#bindgen = "=0.72.1"
+
+[package.metadata.docs.rs]
+rustc-args = ["--cfg", "docsrs"]
